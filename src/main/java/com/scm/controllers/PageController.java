@@ -23,7 +23,7 @@ public class PageController {
     public String servicesPage(){
         System.out.println("Services page");
 
-        return "about";
+        return "services";
     }
 
 }
