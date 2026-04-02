@@ -1,17 +1,38 @@
-<div  class="parent-fragment" th:fragment="parent(content)">
+<!DOCTYPE html>
+<html lang="en"
+class="light"
+ th:fragment="parent(content , title , script)"
+  xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">>
 
-    <h1>This is parent</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolor sed totam magni hic dignissimos neque
-        aspernatur perferendis autem nesciunt ut vel a necessitatibus harum,
-         rerum optio! Aliquam, voluptates tempora.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">SCM</title>
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
 
-    </p>
-<div th:replace = "${content}"></div>
+<body class="dark:bg-gray-900  dark:text-white">
+   <!-- Commo n header -->
+    <div data-th-replace="navbar :: navbar"> </div>
 
-
-<div th:fragment ="test">
-    <h1>Testing fragment</h1>
+    <!-- main content -->
+<div class = "p-4   ">
+    
+    <section data-th-replace="${content}"></section>
 </div>
+    <!-- flow bite content -->
 
-</div>
+    <!-- Common Footer -->
+
+
+
+    
+    <footer >Footer : This is footer</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <th:block data-th-replace="${script}"></th:block>
+</body>
+
+</html>
